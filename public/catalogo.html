@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio | IdeasForge</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-brand"> IdeasForge</div>
+        <nav>
+            <a href="index.html">Explorar</a>
+            <a href="catalogo.html" class="active">Laboratorio</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="card">
+            <h3>Módulo Destacado de Prototipado</h3>
+            <!-- Imagen 3 -->
+            <div class="img-wrapper" style="margin-top: 1rem;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7HNv2ncSwpQoEgSf4JcV-NFdjU1UXVJ47-rJgdrohV8T-mR5F6kCZsScT&s=10" alt="Tecnología y prototipado" style="height: 220px;">
+            </div>
+        </section>
+
+        <!-- Formulario para agregar registros dinámicos -->
+        <section class="card">
+            <h3>Registrar Nuevo Proyecto</h3>
+            <form id="formNuevoProyecto" style="display: flex; flex-direction: column; gap: 12px; max-width: 500px; margin-top: 1rem;">
+                <input type="text" id="inputTitulo" placeholder="Nombre del proyecto" required style="padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: #161b26; color: white;">
+                
+                <input type="number" id="inputProgreso" placeholder="Porcentaje de Avance (0 - 100)" min="0" max="100" required style="padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: #161b26; color: white;">
+                
+                <select id="selectCategoria" style="padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: #161b26; color: white;">
+                    <option value="1">Algoritmos</option>
+                    <option value="2">Gráficos</option>
+                    <option value="3">Ciberseguridad</option>
+                </select>
+
+                <button type="submit" class="btn" style="width: max-content;">Guardar Proyecto</button>
+            </form>
+        </section>
+
+        <section class="card">
+            <h3>Panel de Control e Interacción</h3>
+            <p class="subtitle">Consulta e interactúa con las iniciativas registradas.</p>
+            
+            <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-bottom: 1.5rem;">
+                <!-- Botón 2 -->
+                <button id="btnContador" class="btn btn-secondary">
+                    Nivel de Impacto <span id="numLikes" class="badge">0</span>
+                </button>
+
+                <!-- Botón 3 -->
+                <button id="btnCargarBD" class="btn">
+                    Consultar Registros
+                </button>
+            </div>
+
+            <div id="listaTabla2" class="proyectos-grid"></div>
+
+            <!-- Panel de selección -->
+            <div id="panelSeleccion" class="panel-seleccion" style="display: none;">
+                <h4 style="color: var(--accent-green);">✓ Proyecto Elegido:</h4>
+                <p id="detalleSeleccionado" style="font-size: 1.1rem; font-weight: 600; margin-top: 6px;"></p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
